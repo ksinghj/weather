@@ -1,9 +1,14 @@
 import { combineReducers } from "redux";
 
-const replaceMe = () => {
-  return "Replace me";
+const weatherReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "GET_WEATHER":
+      return { ...state, newState: action.payload };
+    default:
+      return state;
+  }
 };
 
 export default combineReducers({
-  replace: replaceMe,
+  weather: weatherReducer,
 });

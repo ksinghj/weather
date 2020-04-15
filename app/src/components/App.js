@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
+import { getWeather } from "../actions";
 
 class App extends React.Component {
-  // componentDidMount() {
-  //     this.props.getWeather(lat, lon);
-  // }
+  componentDidMount() {
+    this.props.getWeather(53, 1.15, "metric");
+  }
 
   render() {
     return (
@@ -14,6 +16,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapState = state => {
+  return { weather: state.weather };
+};
 
-// TODO: Use location
+export default connect(mapState, { getWeather })(App);
+
+// TODO: Use location?
