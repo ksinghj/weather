@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  // baseURL: `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid=${KEY}`,
-  baseURL: `https://api.openweathermap.org/data/2.5/onecall?`,
+  baseURL: `https://api.openweathermap.org/data/2.5/onecall`,
   responseType: "json",
 });
 

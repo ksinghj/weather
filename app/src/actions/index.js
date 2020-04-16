@@ -8,5 +8,3 @@ export const getWeather = (lat, lon, unit) => async dispatch => {
 
   dispatch({ type: "GET_WEATHER", payload: res.data });
 };
-
-// TODO: Fetch weather data on componentDidMount()

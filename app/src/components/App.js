@@ -23,3 +23,4 @@ const mapState = state => {
 export default connect(mapState, { getWeather })(App);
 
 // TODO: Use location?
+// TODO: Use https://developers.google.com/maps/documentation/geocoding/intro to change location to coords
