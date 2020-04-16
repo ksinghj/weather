@@ -1,10 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
+import KEY from "../api/KEY";
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.getWeather(53, 1.15, "metric");
+    console.log(this.props.getWeather(53, 1.15, KEY, "metric"));
+    this.props.getWeather(53, 1.15, KEY, "metric");
   }
 
   render() {
