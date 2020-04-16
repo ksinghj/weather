@@ -5,7 +5,6 @@ import KEY from "../api/KEY";
 
 class App extends React.Component {
   componentDidMount() {
-    console.log(this.props.getWeather(53, 1.15, KEY, "metric"));
     this.props.getWeather(53, 1.15, KEY, "metric");
   }
 
