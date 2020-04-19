@@ -3,12 +3,14 @@ import { connect } from "react-redux";
 import { getWeather } from "../actions";
 // import owmKEY from "../api/owmKEY";
 import Input from "./Input";
+import Weather from "./Weather";
 
 class App extends React.Component {
   render() {
     return (
       <div className="container" style={{ margin: "2em" }}>
         <Input />
+        <Weather />
       </div>
     );
   }
