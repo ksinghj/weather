@@ -1,4 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import { getWeather } from "../actions";
+import owmKEY from "../api/owmKEY";
+
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -17,7 +21,10 @@ class LocationSearchInput extends React.Component {
   handleSelect = address => {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log("Success", latLng))
+      .then(latLng => {
+        console.log(latLng);
+        this.props.getWeather(latLng.lat, latLng.lng, owmKEY, "metric");
+      })
       .catch(error => console.error("Error", error));
   };
 
@@ -63,4 +70,9 @@ class LocationSearchInput extends React.Component {
   }
 }
 
-export default LocationSearchInput;
+const mapState = state => {
+  return { lat: state.lat, lon: state.lon };
+};
+
+export default connect(mapState, { getWeather })(LocationSearchInput);
+// TODO: put latLng in redux store
