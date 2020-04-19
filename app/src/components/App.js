@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
-import KEY from "../api/KEY";
+// import owmKEY from "../api/owmKEY";
 
 class App extends React.Component {
-  componentDidMount() {
-    this.props.getWeather(53, 1.15, KEY, "metric");
-    console.log(this.props.getWeather(53, 1.15, KEY, "metric"));
-  }
+  // componentDidMount() {
+  //   this.props.getWeather(53, 1.15, ownKEY, "metric");
+  // } OWM API CALL HERE
 
   render() {
     return (
@@ -25,6 +24,7 @@ const mapState = state => {
 
 export default connect(mapState, { getWeather })(App);
 
+// TODO: AUtocomplete working
 // TODO: Use location
 // TODO: call getWeather when input submited with geocoded values
-// KEY: AIzaSyB5MxVLhc-62XMMwEB3PMLcEBZy5ceGOVI
+// googleKEY: AIzaSyB5MxVLhc-62XMMwEB3PMLcEBZy5ceGOVI
