@@ -1,5 +1,3 @@
-// import weatherApi from "../api";
-// import KEY from "../api/KEY";
 import axios from "axios";
 
 const baseURL = "https://api.openweathermap.org/data/2.5/onecall";
