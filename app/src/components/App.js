@@ -25,7 +25,4 @@ const mapState = state => {
 
 export default connect(mapState, { getWeather })(App);
 
-// TODO: AUtocomplete working
 // TODO: Use location
-// TODO: call getWeather when input submited with geocoded values
-// googleKEY: AIzaSyB5MxVLhc-62XMMwEB3PMLcEBZy5ceGOVI

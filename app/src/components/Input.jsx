@@ -70,9 +70,4 @@ class LocationSearchInput extends React.Component {
   }
 }
 
-const mapState = state => {
-  return { lat: state.lat, lon: state.lon };
-};
-
-export default connect(mapState, { getWeather })(LocationSearchInput);
-// TODO: put latLng in redux store
+export default connect(null, { getWeather })(LocationSearchInput);
