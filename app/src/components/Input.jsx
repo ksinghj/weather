@@ -5,7 +5,7 @@ import owmKEY from "../api/owmKEY";
 
 import PlacesAutocomplete, {
   geocodeByAddress,
-  getLatLng,
+  getLatLng, // TODO: use getLatLng for location and speech (nice to have)
 } from "react-places-autocomplete";
 
 class LocationSearchInput extends React.Component {

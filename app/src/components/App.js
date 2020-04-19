@@ -5,15 +5,10 @@ import { getWeather } from "../actions";
 import Input from "./Input";
 
 class App extends React.Component {
-  // componentDidMount() {
-  //   this.props.getWeather(53, 1.15, owmKEY, "metric");
-  // }
-
   render() {
     return (
       <div className="container" style={{ margin: "2em" }}>
         <Input />
-        <button>Submit</button>
       </div>
     );
   }
