@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
 // import owmKEY from "../api/owmKEY";
+import Input from "./Input";
 
 class App extends React.Component {
   // componentDidMount() {
@@ -11,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container" style={{ margin: "2em" }}>
-        <input id="search" type="text" />
+        <Input />
         <button>Submit</button>
       </div>
     );
