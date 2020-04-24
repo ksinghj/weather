@@ -1,1 +1,1 @@
-export default "18a487f3c48a11617bfc4d5e60ff4dc8";
+export const WEATHER_API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`;

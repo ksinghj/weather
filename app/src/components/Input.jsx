@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
-import owmKEY from "../api/owmKEY";
+import { WEATHER_API_KEY } from "../api/owmKEY";
 
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -23,7 +23,12 @@ class LocationSearchInput extends React.Component {
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         console.log(latLng);
-        this.props.getWeather(latLng.lat, latLng.lng, owmKEY, "metric");
+        this.props.getWeather(
+          latLng.lat,
+          latLng.lng,
+          WEATHER_API_KEY,
+          "metric"
+        );
       })
       .catch(error => console.error("Error", error));
   };

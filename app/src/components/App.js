@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
-// import owmKEY from "../api/owmKEY";
 import Input from "./Input";
 import Weather from "./Weather";
 
