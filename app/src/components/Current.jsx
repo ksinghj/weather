@@ -5,7 +5,6 @@ import moment from "moment";
 class Current extends React.Component {
   componentDidMount() {
     const { data } = this.props;
-    console.log(data);
   }
 
   formatDate = time => {
@@ -18,6 +17,7 @@ class Current extends React.Component {
 
   render() {
     const { data } = this.props;
+    console.log(data);
     if (data) {
       this.formatDate(data.current.sunset);
       return (
@@ -46,8 +46,8 @@ class Current extends React.Component {
   }
 }
 
-const mapState = state => {
+const mapStateToProps = state => {
   return { data: state.weatherReducer.data };
 };
 
-export default connect(mapState)(Current);
+export default connect(mapStateToProps)(Current);
