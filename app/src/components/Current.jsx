@@ -11,15 +11,14 @@ class Current extends React.Component {
     return suntimes;
   };
 
-  render() {
+  renderRawData = () => {
     const { data } = this.props;
-    console.log(data);
+    // this.formatDate(data.current.sunset);
     if (data) {
-      this.formatDate(data.current.sunset);
       return (
         <div className="raw">
           <div className="current">
-            <h1>Current</h1>
+            <p>Current</p>
             <ul>
               <li>clouds{data.current.clouds}%</li>
               <li>temp{data.current.temp}℃ </li>
@@ -29,7 +28,7 @@ class Current extends React.Component {
             </ul>
           </div>
           <div className="weather">
-            <h2>Weather</h2>
+            <p>Weather</p>
             <ul>
               <li>description{data.current.weather[0].description}</li>
               <li>icon{data.current.weather[0].icon}</li>
@@ -38,7 +37,18 @@ class Current extends React.Component {
         </div>
       );
     }
-    return <div>Unable to get weather data for this location. (MODAL)</div>;
+    return <div>No data yet...</div>;
+  };
+
+  render() {
+    // const { data } = this.props;
+    // this.formatDate(data.current.sunset);
+    return (
+      <div className="current current-container">
+        <div>Current</div>
+        <div>Raw:{this.renderRawData()}</div>
+      </div>
+    );
   }
 }
 
@@ -47,3 +57,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Current);
+
+// TODO: Map icon ids to imgs (and find imgs first)
