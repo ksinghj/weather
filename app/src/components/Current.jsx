@@ -9,9 +9,11 @@ class Current extends React.Component {
   }
 
   formatDate = time => {
-    let day = moment.unix(time);
-    console.log(day._d); // Sat Apr 25 2020 19:32:19 GMT+0100 (British Summer Time)
-    console.log(moment().endOf(day._d).fromNow());
+    let day = moment.unix(time)._d;
+    let sunrise = moment().from(day);
+    let sunset = moment().to(day);
+    let suntimes = [sunrise, sunset];
+    return suntimes;
   };
 
   render() {
