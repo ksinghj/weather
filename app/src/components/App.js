@@ -2,14 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
 import Input from "./Input";
-import Weather from "./Weather";
+import Current from "./Current";
 
 class App extends React.Component {
   render() {
     return (
       <div className="container" style={{ margin: "2em" }}>
         <Input />
-        <Weather />
+        <Current />
       </div>
     );
   }
