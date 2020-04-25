@@ -22,3 +22,4 @@ const mapState = state => {
 export default connect(mapState, { getWeather })(App);
 
 // TODO: Use location
+// TODO: Switch betweenn Celcius and Farenheight and Kelvin
