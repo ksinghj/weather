@@ -3,17 +3,23 @@ import { connect } from "react-redux";
 import moment from "moment";
 
 class Current extends React.Component {
-  formatDate = time => {
-    let day = moment.unix(time)._d;
-    let sunrise = moment().from(day);
-    let sunset = moment().to(day);
-    let suntimes = [sunrise, sunset];
-    return suntimes;
+  renderSuntimes = (sr, ss) => {
+    let now = moment();
+    let sunriseTime = moment.unix(sr);
+    let sunrise = sunriseTime.fromNow();
+    let sunsetTime = moment.unix(ss);
+    let sunset = now.to(sunsetTime);
+    return (
+      <div className="suntimes">
+        <div>sunrise icon {sunrise}</div>
+        <div>sunset icon {sunset}</div>
+      </div>
+    );
+    // TODO: make this an npm module
   };
 
   renderRawData = () => {
     const { data } = this.props;
-    // this.formatDate(data.current.sunset);
     if (data) {
       return (
         <div className="raw">
@@ -21,10 +27,9 @@ class Current extends React.Component {
             <p>Current</p>
             <ul>
               <li>clouds{data.current.clouds}%</li>
-              <li>temp{data.current.temp}℃ </li>
-              <li>feels like{data.current.feels_like}</li>
-              <li>sunrise{data.current.sunrise}</li>
-              <li>sunset{data.current.sunset}</li>
+              <li>temp{data.current.temp}℃</li>
+              <li>feels like{data.current.feels_like}℃</li>
+              {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
             </ul>
           </div>
           <div className="weather">
@@ -41,8 +46,6 @@ class Current extends React.Component {
   };
 
   render() {
-    // const { data } = this.props;
-    // this.formatDate(data.current.sunset);
     return (
       <div className="current current-container">
         <div>Current</div>
