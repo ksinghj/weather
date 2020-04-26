@@ -18,14 +18,10 @@ class Current extends React.Component {
   };
 
   renderIcon = code => {
-    switch (code) {
-      // case "04d":
-      //   return <img src='04d.png' />;
-      case "04d":
-        return <div>Kartar</div>
-      default:
-        return null;
+    if(code) {
+      return <img src={`http://openweathermap.org/img/wn/${code}@2x.png`} alt="weather icon" />;
     }
+    return <img src='http://openweathermap.org/img/wn/03n@2x.png' alt="weather icon" />;
   };
 
   renderRawData = () => {
