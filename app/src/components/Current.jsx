@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import moment from "moment";
+import sunriseIcon from "../suntimes/sunrise.svg";
+import sunsetIcon from "../suntimes/sunset.svg";
 
 class Current extends React.Component {
   renderSuntimes = (sr, ss) => {
@@ -11,17 +13,41 @@ class Current extends React.Component {
     let sunset = now.to(sunsetTime);
     return (
       <div className="suntimes">
-        <div>sunrise icon {sunrise}</div>
-        <div>sunset icon {sunset}</div>
+        <div>
+          <img
+            style={{ maxWidth: "80px", maxHeight: "auto" }}
+            src={sunriseIcon}
+            alt="sunrise"
+          />{" "}
+          {sunrise}
+        </div>
+        <div>
+          <img
+            style={{ maxWidth: "80px", maxHeight: "auto" }}
+            src={sunsetIcon}
+            alt="sunset"
+          />{" "}
+          {sunset}
+        </div>
       </div>
     );
   };
 
-  renderIcon = code => {
-    if(code) {
-      return <img src={`http://openweathermap.org/img/wn/${code}@2x.png`} alt="weather icon" />;
+  renderIcon = (code) => {
+    if (code) {
+      return (
+        <img
+          src={`http://openweathermap.org/img/wn/${code}@2x.png`}
+          alt="weather icon"
+        />
+      );
     }
-    return <img src='http://openweathermap.org/img/wn/03n@2x.png' alt="weather icon" />;
+    return (
+      <img
+        src="http://openweathermap.org/img/wn/03n@2x.png"
+        alt="weather icon"
+      />
+    );
   };
 
   renderRawData = () => {
@@ -32,7 +58,6 @@ class Current extends React.Component {
           <div className="current">
             <p>Current</p>
             <ul>
-              <li>clouds{data.current.clouds}%</li>
               <li>temp{data.current.temp}℃</li>
               <li>feels like{data.current.feels_like}℃</li>
               {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
@@ -41,6 +66,7 @@ class Current extends React.Component {
           <div className="weather">
             <p>Weather</p>
             <ul>
+              <li>clouds{data.current.clouds}%</li>
               <li>description{data.current.weather[0].description}</li>
               <li>{this.renderIcon(data.current.weather[0].icon)}</li>
             </ul>
@@ -61,7 +87,7 @@ class Current extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return { data: state.weatherReducer.data };
 };
 
