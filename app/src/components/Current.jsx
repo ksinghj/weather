@@ -17,6 +17,17 @@ class Current extends React.Component {
     );
   };
 
+  renderIcon = code => {
+    switch (code) {
+      // case "04d":
+      //   return <img src='04d.png' />;
+      case "04d":
+        return <div>Kartar</div>
+      default:
+        return null;
+    }
+  };
+
   renderRawData = () => {
     const { data } = this.props;
     if (data) {
@@ -35,7 +46,7 @@ class Current extends React.Component {
             <p>Weather</p>
             <ul>
               <li>description{data.current.weather[0].description}</li>
-              <li>icon{data.current.weather[0].icon}</li>
+              <li>{this.renderIcon(data.current.weather[0].icon)}</li>
             </ul>
           </div>
         </div>
