@@ -36,12 +36,11 @@ class LocationSearchInput extends React.Component {
   render() {
     return (
       <PlacesAutocomplete
-      className="input-container"
         value={this.state.address}
         onChange={this.handleChange}
         onSelect={this.handleSelect}>
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
+          <div className="container__input">
             <input
               {...getInputProps({
                 placeholder: "Search Places ...",

@@ -3,13 +3,16 @@ import { connect } from "react-redux";
 import { getWeather } from "../actions";
 import Input from "./Input";
 import Current from "./Current";
+import "../styles/app.css";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="container" style={{ margin: "2em" }}>
-        <Input />
-        <Current />
+      <div className="container__app">
+        <div className="container__current">
+          <Input />
+          <Current />
+        </div>
       </div>
     );
   }
