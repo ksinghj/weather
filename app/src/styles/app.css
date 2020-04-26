@@ -1,5 +1,8 @@
-.container__app {
-    padding: 2em;
+/* .container__app {
+    padding: 0;
+} */
+* {
+    font-size: 100;
 }
 .container__current {
     background: #64B6FF;

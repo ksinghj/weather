@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import moment from "moment";
 import sunriseIcon from "../suntimes/sunrise.svg";
 import sunsetIcon from "../suntimes/sunset.svg";
+import "../styles/current.css";
 
 class Current extends React.Component {
   renderSuntimes = (sr, ss) => {
@@ -56,7 +57,6 @@ class Current extends React.Component {
       return (
         <div className="raw">
           <div className="current">
-            <p>Current</p>
             <ul>
               <li>temp{data.current.temp}℃</li>
               <li>feels like{data.current.feels_like}℃</li>
@@ -64,7 +64,6 @@ class Current extends React.Component {
             </ul>
           </div>
           <div className="weather">
-            <p>Weather</p>
             <ul>
               <li>clouds{data.current.clouds}%</li>
               <li>description{data.current.weather[0].description}</li>
@@ -77,10 +76,24 @@ class Current extends React.Component {
     return <div>No data yet...</div>;
   };
 
+  renderTemp = () => {
+    const { data } = this.props;
+    if (data) {
+      return (
+        <div className="current__temps">
+          <img src="http://openweathermap.org/img/wn/03n@2x.png" alt="icon" className="current__main-icon" />
+          <div className="current__temp">{data.current.temp}℃</div>
+          <div className="current__feelslike">Feels like {data.current.feels_like}℃</div>
+        </div>
+      );
+    }
+  };
+
   render() {
     return (
       <div className="current-container">
-        <div>Raw:{this.renderRawData()}</div>
+      <div>{this.renderTemp()}</div>
+      <div>Raw:{this.renderRawData()}</div>
       </div>
     );
   }

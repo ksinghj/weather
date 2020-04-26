@@ -1,4 +1,7 @@
 /* Input */
+* {
+  font-size: 100;
+}
 .location-search-input {
   border: none;
   outline: none;
@@ -6,4 +9,7 @@
   width: 100%;
   background: #64b6ff;
   color: white;
+}
+.container__input {
+  padding: 2em 4em;
 }

@@ -55,8 +55,8 @@ class LocationSearchInput extends React.Component {
                   : "suggestion-item";
                 // inline style for demonstration purpose
                 const style = suggestion.active
-                  ? { backgroundColor: "#fafafa", cursor: "pointer" }
-                  : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  ? { backgroundColor: "#89c8ff", cursor: "pointer", padding: '1em' }
+                  : { backgroundColor: "#64b6f", cursor: "pointer", padding: '1em' };
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
@@ -76,3 +76,7 @@ class LocationSearchInput extends React.Component {
 }
 
 export default connect(null, { getWeather })(LocationSearchInput);
+
+// There is some work to be done on this component
+// Active selections on the dropdown stay active styled (undesired)
+// Input text isn't updated when option is CLICKED
