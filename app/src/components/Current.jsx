@@ -15,7 +15,6 @@ class Current extends React.Component {
         <div>sunset icon {sunset}</div>
       </div>
     );
-    // TODO: make this an npm module
   };
 
   renderRawData = () => {
