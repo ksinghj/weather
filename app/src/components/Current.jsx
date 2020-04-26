@@ -33,7 +33,7 @@ class Current extends React.Component {
     );
   };
 
-  renderIcon = (code) => {
+  renderIcon = code => {
     if (code) {
       return (
         <img
@@ -79,15 +79,14 @@ class Current extends React.Component {
 
   render() {
     return (
-      <div className="current current-container">
-        <div>Current</div>
+      <div className="current-container">
         <div>Raw:{this.renderRawData()}</div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return { data: state.weatherReducer.data };
 };
 

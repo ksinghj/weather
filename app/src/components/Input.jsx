@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
 import { WEATHER_API_KEY } from "../api/owmKEY";
+import '../styles/input.css';
 
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -35,6 +36,7 @@ class LocationSearchInput extends React.Component {
   render() {
     return (
       <PlacesAutocomplete
+      className="input-container"
         value={this.state.address}
         onChange={this.handleChange}
         onSelect={this.handleSelect}>
