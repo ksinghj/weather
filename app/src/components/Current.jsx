@@ -14,17 +14,17 @@ class Current extends React.Component {
     let sunset = now.to(sunsetTime);
     return (
       <div className="suntimes__grid">
-        <div className="suntimes__sunrise">
+        <div className="suntimes__sunrise suntimes__padding-align">
           <img
-            style={{ maxWidth: "80px", maxHeight: "auto" }}
+            style={{ maxWidth: "50px", maxHeight: "auto" }}
             src={sunriseIcon}
             alt="sunrise"
           />{" "}
           {sunrise}
         </div>
-        <div className="suntimes__sunset">
+        <div className="suntimes__sunset suntimes__padding-align">
           <img
-            style={{ maxWidth: "80px", maxHeight: "auto" }}
+            style={{ maxWidth: "50px", maxHeight: "auto" }}
             src={sunsetIcon}
             alt="sunset"
           />{" "}
@@ -37,14 +37,14 @@ class Current extends React.Component {
   renderIcon = code => {
     if (code) {
       return (
-        <img
+        <img className="owm-icon"
           src={`http://openweathermap.org/img/wn/${code}@2x.png`}
           alt="weather icon"
         />
       );
     }
     return (
-      <img
+      <img className="owm-icon"
         src="http://openweathermap.org/img/wn/03n@2x.png"
         alt="weather icon"
       />
@@ -56,18 +56,16 @@ class Current extends React.Component {
     if (data) {
       return (
         <div className="current__temps">
-          <img
-            src="http://openweathermap.org/img/wn/03n@2x.png"
-            alt="icon"
-            className="current__main-icon"
-          />
+          <div className="current__main-icon">
+            {this.renderIcon(data.current.weather[0].icon)}
+          </div>
           <div className="current__temp">{data.current.temp}℃</div>
           <div className="current__feelslike">
             Feels like {data.current.feels_like}℃
           </div>
         </div>
       );
-    }
+    } // TODO: Change current__main-icon to my own icons
   };
 
   render() {
