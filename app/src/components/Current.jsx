@@ -13,8 +13,8 @@ class Current extends React.Component {
     let sunsetTime = moment.unix(ss);
     let sunset = now.to(sunsetTime);
     return (
-      <div className="suntimes">
-        <div>
+      <React.Fragment>
+        <div className="suntimes__sunrise">
           <img
             style={{ maxWidth: "80px", maxHeight: "auto" }}
             src={sunriseIcon}
@@ -22,7 +22,7 @@ class Current extends React.Component {
           />{" "}
           {sunrise}
         </div>
-        <div>
+        <div className="suntimes__sunset">
           <img
             style={{ maxWidth: "80px", maxHeight: "auto" }}
             src={sunsetIcon}
@@ -30,7 +30,7 @@ class Current extends React.Component {
           />{" "}
           {sunset}
         </div>
-      </div>
+      </React.Fragment>
     );
   };
 
@@ -51,51 +51,41 @@ class Current extends React.Component {
     );
   };
 
-  renderRawData = () => {
-    const { data } = this.props;
-    if (data) {
-      return (
-        <div className="raw">
-          <div className="current">
-            <ul>
-              <li>temp{data.current.temp}℃</li>
-              <li>feels like{data.current.feels_like}℃</li>
-              {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
-            </ul>
-          </div>
-          <div className="weather">
-            <ul>
-              <li>clouds{data.current.clouds}%</li>
-              <li>description{data.current.weather[0].description}</li>
-              <li>{this.renderIcon(data.current.weather[0].icon)}</li>
-            </ul>
-          </div>
-        </div>
-      );
-    }
-    return <div>No data yet...</div>;
-  };
-
   renderTemp = () => {
     const { data } = this.props;
     if (data) {
       return (
         <div className="current__temps">
-          <img src="http://openweathermap.org/img/wn/03n@2x.png" alt="icon" className="current__main-icon" />
+          <img
+            src="http://openweathermap.org/img/wn/03n@2x.png"
+            alt="icon"
+            className="current__main-icon"
+          />
           <div className="current__temp">{data.current.temp}℃</div>
-          <div className="current__feelslike">Feels like {data.current.feels_like}℃</div>
+          <div className="current__feelslike">
+            Feels like {data.current.feels_like}℃
+          </div>
         </div>
       );
     }
   };
 
   render() {
-    return (
-      <div className="current-container">
-      <div>{this.renderTemp()}</div>
-      <div>Raw:{this.renderRawData()}</div>
-      </div>
-    );
+    const { data } = this.props;
+    if (data) {
+      return (
+        <div className="current-container current-font">
+          <div>{this.renderTemp()}</div>
+          {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
+          <div className="current__clouds-grid">
+            <div className="clouds-percent">{data.current.clouds}%</div>
+            <div className="clouds-description">{data.current.weather[0].description}</div>
+            <div className="clouds-icon">{this.renderIcon(data.current.weather[0].icon)}</div>
+          </div>
+        </div>
+      );
+    }
+    return <div>Enter location in search</div>;
   }
 }
 
