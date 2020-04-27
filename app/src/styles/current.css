@@ -23,6 +23,8 @@
   grid-row: 1 / 3;
   justify-self: end;
   align-self: center;
+  max-width: 120px;
+  height: auto;
 }
 .current__temp {
   grid-row: 1;

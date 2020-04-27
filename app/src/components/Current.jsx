@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import moment from "moment";
 import sunriseIcon from "../img/suntimes/sunrise.svg";
 import sunsetIcon from "../img/suntimes/sunset.svg";
+import sunIcon from "../img/sun-icon.png";
 import "../styles/current.css";
 
 class Current extends React.Component {
@@ -59,9 +60,7 @@ class Current extends React.Component {
     if (data) {
       return (
         <div className="current__temps">
-          <div className="current__main-icon">
-            {this.renderIcon(data.current.weather[0].icon)}
-          </div>
+          <img className="current__main-icon" src={sunIcon} alt="main icon" />
           <div className="current__temp">{data.current.temp}℃</div>
           <div className="current__feelslike">
             Feels like {data.current.feels_like}℃
@@ -69,6 +68,7 @@ class Current extends React.Component {
         </div>
       );
     } // TODO: Change current__main-icon to my own icons
+    // {this.renderIcon(data.current.weather[0].icon)}
   };
 
   render() {

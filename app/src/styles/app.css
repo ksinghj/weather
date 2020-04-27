@@ -1,9 +1,6 @@
 /* .container__app {
     padding: 0;
 } */
-* {
-    font-size: 100;
-}
 .container__app {
     background: #64B6FF;
 }
