@@ -14,7 +14,7 @@ class Current extends React.Component {
     let sunsetTime = moment.unix(ss);
     let sunset = now.to(sunsetTime);
     return (
-      <div className="suntimes__grid">
+      <div className="suntimes__grid global-font__medium">
         <div className="suntimes__sunrise suntimes__padding-align">
           <img
             className="suntimes__img"
@@ -75,10 +75,10 @@ class Current extends React.Component {
     const { data } = this.props;
     if (data) {
       return (
-        <div className="current-container current-font">
+        <div className="container__current current-font">
           {this.renderTemp()}
           {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
-          <div className="current__clouds-grid">
+          <div className="current__clouds-grid global-font__medium">
             <div className="clouds-percent">{data.current.clouds}%</div>
             <div className="clouds-description">
               {data.current.weather[0].description}

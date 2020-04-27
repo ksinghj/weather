@@ -1,9 +1,37 @@
+/* Helpers */
+.global-large {
+  font-size: 88px;
+}
+.global-font__medium {
+  font-size: 36px;
+}
+.global-small {
+  font-size: 32px;
+}
+@media screen and (max-width: 1460px) {
+  .global-large {
+    font-size: 88px;
+  }
+  .global-font__medium {
+    font-size: 36px;
+  }
+  .global-small {
+    font-size: 32px;
+  }
+}
+
 /* Current */
-.current-container {
+.container__current {
   display: grid;
   grid-template-columns: 5fr 4fr;
   grid-template-rows: 1fr 1fr;
   background: #64b6ff;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1100px) {
+  .container__current {
+    max-width: 75vw;
+  }
 }
 .current-font {
   color: white;
@@ -25,6 +53,7 @@
   align-self: center;
   max-width: 120px;
   height: auto;
+  margin: 0 3em 3em 0;
 }
 .current__temp {
   grid-row: 1;
@@ -35,7 +64,7 @@
 .current__feelslike {
   grid-row: 2;
   grid-column: 2;
-  font-size: 40px;
+  font-size: 34px;
 }
 .owm-icon {
   max-width: 80px;

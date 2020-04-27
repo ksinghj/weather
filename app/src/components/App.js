@@ -9,10 +9,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="container__app">
-        <div className="container__current">
-          <Input />
-          <Current />
-        </div>
+        <Input />
+        <Current />
       </div>
     );
   }
