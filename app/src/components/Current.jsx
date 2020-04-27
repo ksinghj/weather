@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import moment from "moment";
-import sunriseIcon from "../suntimes/sunrise.svg";
-import sunsetIcon from "../suntimes/sunset.svg";
+import sunriseIcon from "../img/suntimes/sunrise.svg";
+import sunsetIcon from "../img/suntimes/sunset.svg";
 import "../styles/current.css";
 
 class Current extends React.Component {
@@ -16,6 +16,7 @@ class Current extends React.Component {
       <div className="suntimes__grid">
         <div className="suntimes__sunrise suntimes__padding-align">
           <img
+            className="suntimes__img"
             style={{ maxWidth: "50px", maxHeight: "auto" }}
             src={sunriseIcon}
             alt="sunrise"
@@ -37,14 +38,16 @@ class Current extends React.Component {
   renderIcon = code => {
     if (code) {
       return (
-        <img className="owm-icon"
+        <img
+          className="owm-icon"
           src={`http://openweathermap.org/img/wn/${code}@2x.png`}
           alt="weather icon"
         />
       );
     }
     return (
-      <img className="owm-icon"
+      <img
+        className="owm-icon"
         src="http://openweathermap.org/img/wn/03n@2x.png"
         alt="weather icon"
       />
