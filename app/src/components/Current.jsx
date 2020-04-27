@@ -13,7 +13,7 @@ class Current extends React.Component {
     let sunsetTime = moment.unix(ss);
     let sunset = now.to(sunsetTime);
     return (
-      <React.Fragment>
+      <div className="suntimes__grid">
         <div className="suntimes__sunrise">
           <img
             style={{ maxWidth: "80px", maxHeight: "auto" }}
@@ -30,7 +30,7 @@ class Current extends React.Component {
           />{" "}
           {sunset}
         </div>
-      </React.Fragment>
+      </div>
     );
   };
 
@@ -75,12 +75,16 @@ class Current extends React.Component {
     if (data) {
       return (
         <div className="current-container current-font">
-          <div>{this.renderTemp()}</div>
+          {this.renderTemp()}
           {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
           <div className="current__clouds-grid">
             <div className="clouds-percent">{data.current.clouds}%</div>
-            <div className="clouds-description">{data.current.weather[0].description}</div>
-            <div className="clouds-icon">{this.renderIcon(data.current.weather[0].icon)}</div>
+            <div className="clouds-description">
+              {data.current.weather[0].description}
+            </div>
+            <div className="clouds-icon">
+              {this.renderIcon(data.current.weather[0].icon)}
+            </div>
           </div>
         </div>
       );
