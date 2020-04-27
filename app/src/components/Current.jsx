@@ -5,7 +5,7 @@ import sunriseIcon from "../img/suntimes/sunrise.svg";
 import sunsetIcon from "../img/suntimes/sunset.svg";
 import sunIcon from "../img/sun-icon.png";
 import "../styles/current.css";
-import '../styles/global.css';
+import "../styles/global.css";
 
 class Current extends React.Component {
   renderSuntimes = (sr, ss) => {
@@ -62,7 +62,9 @@ class Current extends React.Component {
       return (
         <div className="current__temps">
           <img className="current__main-icon" src={sunIcon} alt="main icon" />
-          <div className="current__temp global-font__large">{data.current.temp}℃</div>
+          <div className="current__temp global-font__large">
+            {data.current.temp}℃
+          </div>
           <div className="current__feelslike global-font__medium">
             Feels like {data.current.feels_like}℃
           </div>

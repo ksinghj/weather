@@ -1,21 +1,21 @@
 /* Helpers */
 .global-font__large {
-    font-size: 88px;
+  font-size: 88px;
+}
+.global-font__medium {
+  font-size: 36px;
+}
+.global-small {
+  font-size: 80px;
+}
+@media screen and (max-width: 1460px) {
+  .global-font__large {
+    font-size: 64px;
   }
   .global-font__medium {
-    font-size: 36px;
+    font-size: 28px;
   }
   .global-small {
     font-size: 80px;
   }
-  @media screen and (max-width: 1460px) {
-    .global-font__large {
-      font-size: 64px;
-    }
-    .global-font__medium {
-      font-size: 28px;
-    }
-    .global-small {
-      font-size: 80px;
-    }
-  }
+}
