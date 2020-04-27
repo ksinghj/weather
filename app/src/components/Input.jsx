@@ -6,7 +6,7 @@ import '../styles/input.css';
 
 import PlacesAutocomplete, {
   geocodeByAddress,
-  getLatLng, // TODO: use getLatLng for location and speech (nice to have)
+  getLatLng,
 } from "react-places-autocomplete";
 
 class LocationSearchInput extends React.Component {

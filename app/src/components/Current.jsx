@@ -104,5 +104,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Current);
-
-// TODO: Map icon ids to imgs (and find imgs first)
