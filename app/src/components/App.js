@@ -15,14 +15,15 @@ class App extends React.Component {
           <Input />
           <Current />
         </div>
-        <Row />
+        <Row rowName="hourly" data={this.props.data} />
+        <Row rowName="daily" data={this.props.data} />
       </div>
     );
   }
 }
 
 const mapState = state => {
-  return { weather: state.weather };
+  return { data: state.weatherReducer.data };
 };
 
 export default connect(mapState, { getWeather })(App);
