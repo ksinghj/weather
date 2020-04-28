@@ -39,8 +39,6 @@ class Current extends React.Component {
   };
 
   renderSuntime = (sr, ss) => {
-    let hr = (new Date()).getHours();
-    console.log(hr);
     let now = moment();
     let sunriseTime = moment.unix(sr);
     let sunsetTime = moment.unix(ss);
@@ -67,7 +65,7 @@ class Current extends React.Component {
         </div>
       </div>
     );
-  }
+  };
 
   renderIcon = code => {
     if (code) {

@@ -10,10 +10,10 @@
 }
 @media screen and (max-width: 1460px) {
   .global-font__large {
-    font-size: 64px;
+    font-size: 44px;
   }
   .global-font__medium {
-    font-size: 28px;
+    font-size: 20px;
   }
   .global-small {
     font-size: 80px;
