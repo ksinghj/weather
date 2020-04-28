@@ -30,6 +30,6 @@ export default connect(mapState, { getWeather })(App);
 
 // TODO: Use location
 // TODO: Switch betweenn Celcius and Farenheight and Kelvin
-// TODO: Conditional render with react-media
+// TODO: Conditional render with react-media for rows
 // TODO: add buttons for desktop scrolling on cards (later)
 // TODO: round temps to nearest int
