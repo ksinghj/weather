@@ -9,6 +9,7 @@
 }
 .container__input {
   padding: 2em 4em;
+  background: #64b6ff;
 }
 @media screen and (max-width: 680px) {
   .location-search-input {

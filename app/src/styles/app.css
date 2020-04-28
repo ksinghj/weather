@@ -1,6 +1,6 @@
 /* .container__app {
-    padding: 0;
+    
 } */
-.container__app {
-    background: #64B6FF;
+.container__main-bg {
+  background: #64b6ff;
 }

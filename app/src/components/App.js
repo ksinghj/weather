@@ -3,14 +3,19 @@ import { connect } from "react-redux";
 import { getWeather } from "../actions";
 import Input from "./Input";
 import Current from "./Current";
+import Row from "./Row";
+
 import "../styles/app.css";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="container__app">
-        <Input />
-        <Current />
+      <div>
+        <div className="container__main-bg">
+          <Input />
+          <Current />
+        </div>
+        <Row />
       </div>
     );
   }
