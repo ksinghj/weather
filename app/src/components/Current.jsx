@@ -12,8 +12,8 @@ class Current extends React.Component {
   renderSuntimes = (sr, ss) => {
     let now = moment();
     let sunriseTime = moment.unix(sr);
-    let sunrise = sunriseTime.fromNow();
     let sunsetTime = moment.unix(ss);
+    let sunrise = sunriseTime.fromNow();
     let sunset = now.to(sunsetTime);
     return (
       <div className="suntimes__grid global-font__medium">
@@ -37,6 +37,37 @@ class Current extends React.Component {
       </div>
     );
   };
+
+  renderSuntime = (sr, ss) => {
+    let hr = (new Date()).getHours();
+    console.log(hr);
+    let now = moment();
+    let sunriseTime = moment.unix(sr);
+    let sunsetTime = moment.unix(ss);
+    let sunrise = sunriseTime.fromNow();
+    let sunset = now.to(sunsetTime);
+    return (
+      <div className="suntimes__grid global-font__medium">
+        <div className="suntimes__sunrise suntimes__padding-align">
+          <img
+            className="suntimes__img"
+            style={{ maxWidth: "50px", maxHeight: "auto" }}
+            src={sunriseIcon}
+            alt="sunrise"
+          />{" "}
+          {sunrise}
+        </div>
+        <div className="suntimes__sunset suntimes__padding-align">
+          <img
+            style={{ maxWidth: "50px", maxHeight: "auto" }}
+            src={sunsetIcon}
+            alt="sunset"
+          />{" "}
+          {sunset}
+        </div>
+      </div>
+    );
+  }
 
   renderIcon = code => {
     if (code) {
@@ -83,14 +114,16 @@ class Current extends React.Component {
           <Media queries={{ small: { maxWidth: 680 } }}>
             {matches =>
               matches.small ? (
+                // Mobile
                 <React.Fragment>
                   {this.renderTemp()}
-                  {this.renderSuntimes(
+                  {this.renderSuntime(
                     data.current.sunrise,
                     data.current.sunset
                   )}
                 </React.Fragment>
               ) : (
+                // Tablet and up
                 <React.Fragment>
                   {this.renderTemp()}
                   {this.renderSuntimes(
