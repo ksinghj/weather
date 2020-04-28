@@ -1,6 +1,6 @@
 import React from "react";
 
-const Row = () => {
+const Row = ({ props }) => {
   return <div>Row</div>;
 };
 
