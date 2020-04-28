@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 
 class Row extends React.Component {
   renderRowType = name => {
