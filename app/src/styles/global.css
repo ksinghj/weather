@@ -19,3 +19,14 @@
     font-size: 80px;
   }
 }
+@media screen and (max-width: 680px) {
+  .global-font__large {
+    font-size: 44px;
+  }
+  .global-font__medium {
+    font-size: 22px;
+  }
+  .global-small {
+    font-size: 10px;
+  }
+}

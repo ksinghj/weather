@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import Media from "react-media";
 import moment from "moment";
 import sunriseIcon from "../img/suntimes/sunrise.svg";
 import sunsetIcon from "../img/suntimes/sunset.svg";
@@ -78,18 +79,37 @@ class Current extends React.Component {
     const { data } = this.props;
     if (data) {
       return (
-        <div className="container__current current-font">
-          {this.renderTemp()}
-          {this.renderSuntimes(data.current.sunrise, data.current.sunset)}
-          <div className="current__clouds-grid global-font__medium">
-            <div className="clouds-percent">{data.current.clouds}%</div>
-            <div className="clouds-description">
-              {data.current.weather[0].description}
-            </div>
-            <div className="clouds-icon">
-              {this.renderIcon(data.current.weather[0].icon)}
-            </div>
-          </div>
+        <div className="current__container current-font">
+          <Media queries={{ small: { maxWidth: 680 } }}>
+            {matches =>
+              matches.small ? (
+                <React.Fragment>
+                  {this.renderTemp()}
+                  {this.renderSuntimes(
+                    data.current.sunrise,
+                    data.current.sunset
+                  )}
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  {this.renderTemp()}
+                  {this.renderSuntimes(
+                    data.current.sunrise,
+                    data.current.sunset
+                  )}
+                  <div className="current__clouds-grid global-font__medium">
+                    <div className="clouds-percent">{data.current.clouds}%</div>
+                    <div className="clouds-description">
+                      {data.current.weather[0].description}
+                    </div>
+                    <div className="clouds-icon">
+                      {this.renderIcon(data.current.weather[0].icon)}
+                    </div>
+                  </div>
+                </React.Fragment>
+              )
+            }
+          </Media>
         </div>
       );
     }
