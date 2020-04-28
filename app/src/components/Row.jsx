@@ -2,6 +2,12 @@ import React from "react";
 import Card from "./Card";
 
 class Row extends React.Component {
+  renderCards = () => {
+    return this.props.hourly.slice(0, 24).map(card => {
+      return <Card data={card} />;
+    });
+  };
+
   renderRowType = name => {
     if (this.props) {
       if (name === "hourly") {
@@ -10,9 +16,7 @@ class Row extends React.Component {
           <div>
             <div className="row__title">Hourly</div>
             <div className="row__description">Your forecast for today.</div>
-            {this.props.hourly.map(card => {
-              return <Card data={card} />;
-            })}
+            {this.renderCards()}
           </div>
         );
       }
