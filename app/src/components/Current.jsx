@@ -38,35 +38,6 @@ class Current extends React.Component {
     );
   };
 
-  renderSuntime = (sr, ss) => {
-    let now = moment();
-    let sunriseTime = moment.unix(sr);
-    let sunsetTime = moment.unix(ss);
-    let sunrise = sunriseTime.fromNow();
-    let sunset = now.to(sunsetTime);
-    return (
-      <div className="suntimes__grid global-font__medium">
-        <div className="suntimes__sunrise suntimes__padding-align">
-          <img
-            className="suntimes__img"
-            style={{ maxWidth: "50px", maxHeight: "auto" }}
-            src={sunriseIcon}
-            alt="sunrise"
-          />{" "}
-          {sunrise}
-        </div>
-        <div className="suntimes__sunset suntimes__padding-align">
-          <img
-            style={{ maxWidth: "50px", maxHeight: "auto" }}
-            src={sunsetIcon}
-            alt="sunset"
-          />{" "}
-          {sunset}
-        </div>
-      </div>
-    );
-  };
-
   renderIcon = code => {
     if (code) {
       return (
@@ -115,7 +86,7 @@ class Current extends React.Component {
                 // Mobile
                 <React.Fragment>
                   {this.renderTemp()}
-                  {this.renderSuntime(
+                  {this.renderSuntimes(
                     data.current.sunrise,
                     data.current.sunset
                   )}

@@ -5,7 +5,16 @@ class Row extends React.Component {
   renderRowType = name => {
     if (this.props) {
       if (name === "hourly") {
-        return <div>Hourly{console.log(this.props.hourly)}</div>;
+        console.log(this.props.hourly);
+        return (
+          <div>
+            <div className="row__title">Hourly</div>
+            <div className="row__description">Your forecast for today.</div>
+            {this.props.hourly.map(card => {
+              return <Card data={card} />;
+            })}
+          </div>
+        );
       }
       return <div>Week{console.log(this.props.daily)}</div>;
     }
