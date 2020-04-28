@@ -2,12 +2,13 @@ import React from "react";
 
 class Row extends React.Component {
   renderRowType = name => {
-    if (this.props.data) {
+    if (this.props) {
       if (name === "hourly") {
-        return <div>Hourly{console.log(this.props.data.hourly)}</div>;
+        return <div>Hourly{console.log(this.props.hourly)}</div>;
       }
-      return <div>Week{console.log(this.props.data.daily)}</div>;
+      return <div>Week{console.log(this.props.daily)}</div>;
     }
+    return <div>getting data</div>;
   };
 
   render() {

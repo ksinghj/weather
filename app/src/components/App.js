@@ -8,6 +8,18 @@ import Row from "./Row";
 import "../styles/app.css";
 
 class App extends React.Component {
+  renderRows = () => {
+    if (this.props.data) {
+      return (
+        <React.Fragment>
+          <Row rowName="hourly" hourly={this.props.data.hourly} />
+          <Row rowName="daily" daily={this.props.data.daily} />
+        </React.Fragment>
+      );
+    }
+    return <div>Getting data</div>;
+  };
+
   render() {
     return (
       <div>
@@ -15,8 +27,7 @@ class App extends React.Component {
           <Input />
           <Current />
         </div>
-        <Row rowName="hourly" data={this.props.data} />
-        <Row rowName="daily" data={this.props.data} />
+        {this.renderRows()}
       </div>
     );
   }
