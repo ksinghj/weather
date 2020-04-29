@@ -1,7 +1,9 @@
 .row {
   display: grid;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: 2fr 10fr;
   grid-template-rows: 1fr 1fr;
+  padding-left: 2em;
+  height: 40vh;
 }
 .row__title {
   grid-row: 1;
@@ -16,4 +18,6 @@
   grid-column: 2;
   display: flex;
   flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
 }

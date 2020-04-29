@@ -1,5 +1,6 @@
 .container__app {
   max-width: 100vw;
+  overflow-x: hidden;
 }
 .container__main-bg {
   background: #64b6ff;
