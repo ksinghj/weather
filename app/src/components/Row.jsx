@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import "../styles/row.css";
 
 class Row extends React.Component {
   renderCards = type => {
