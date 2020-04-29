@@ -19,19 +19,23 @@ class Row extends React.Component {
       if (name === "hourly") {
         console.log(this.props.hourly);
         return (
-          <div className="row">
-            <div className="row__title">Hourly</div>
-            <div className="row__description">Your forecast for today.</div>
+          <React.Fragment>
+            <div className="row__info">
+              <div className="row__title">Hourly</div>
+              <div className="row__description">Your forecast for today.</div>
+            </div>
             <div className="row__cards">{this.renderCards("hourly")}</div>
-          </div>
+          </React.Fragment>
         );
       }
       return (
-        <div className="row">
-          <div className="row__title">Weekly</div>
-          <div className="row__description">Your forecast for this week.</div>
+        <React.Fragment>
+          <div className="row__info">
+            <div className="row__title">Week</div>
+            <div className="row__description">Your forecast for this week.</div>
+          </div>
           <div className="row__cards">{this.renderCards("daily")}</div>
-        </div>
+        </React.Fragment>
       );
     }
     return <div>getting data</div>;

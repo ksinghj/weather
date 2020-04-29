@@ -4,7 +4,7 @@ import { getWeather } from "../actions";
 import Input from "./Input";
 import Current from "./Current";
 import Row from "./Row";
-import "../styles/app.css";
+// import "../styles/app.css";
 
 class App extends React.Component {
   renderRows = () => {
@@ -22,13 +22,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container__app">
-        <div className="container__main-bg">
-          <Input />
-          <Current />
+      <React.Fragment>
+        <div className="container__app">
+          <div className="container__main-bg">
+            <Input />
+            <Current />
+          </div>
         </div>
         {this.renderRows()}
-      </div>
+      </React.Fragment>
     );
   }
 }

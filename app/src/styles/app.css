@@ -5,3 +5,6 @@
 .container__main-bg {
   background: #64b6ff;
 }
+#root {
+  overflow-x: hidden;
+}
