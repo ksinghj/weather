@@ -18,7 +18,7 @@ class Row extends React.Component {
       if (name === "hourly") {
         console.log(this.props.hourly);
         return (
-          <div>
+          <div className="row">
             <div className="row__title">Hourly</div>
             <div className="row__description">Your forecast for today.</div>
             <div className="row__cards">{this.renderCards("hourly")}</div>
@@ -26,7 +26,7 @@ class Row extends React.Component {
         );
       }
       return (
-        <div>
+        <div className="row">
           <div className="row__title">Weekly</div>
           <div className="row__description">Your forecast for this week.</div>
           <div className="row__cards">{this.renderCards("daily")}</div>
