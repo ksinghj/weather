@@ -6,15 +6,16 @@
   height: 40vh;
   white-space: nowrap;
 }
-/* .row__title {
-  grid-row: 1;
-  grid-column: 1;
-}
-.row__description {
-  grid-column: 1;
-} */
 .row__info {
   grid-column: 1;
+  padding: 0.3em;
+  border-bottom: 2px solid black;
+  margin-bottom: 1em;
+  border-top: 2px solid black;
+  margin-top: 1em;
+}
+.row__title {
+  font-size: larger;
 }
 .row__cards {
   grid-column: 2;
