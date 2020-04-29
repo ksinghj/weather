@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Media from "react-media";
 import moment from "moment";
+import renderIcon from "../api/renderIcon";
 import sunriseIcon from "../img/suntimes/sunrise.svg";
 import sunsetIcon from "../img/suntimes/sunset.svg";
 import sunIcon from "../img/sun-icon.png";
@@ -35,25 +36,6 @@ class Current extends React.Component {
           {sunset}
         </div>
       </div>
-    );
-  };
-
-  renderIcon = code => {
-    if (code) {
-      return (
-        <img
-          className="owm-icon"
-          src={`http://openweathermap.org/img/wn/${code}@2x.png`}
-          alt="weather icon"
-        />
-      );
-    }
-    return (
-      <img
-        className="owm-icon"
-        src="http://openweathermap.org/img/wn/03n@2x.png"
-        alt="weather icon"
-      />
     );
   };
 
@@ -105,7 +87,7 @@ class Current extends React.Component {
                       {data.current.weather[0].description}
                     </div>
                     <div className="clouds-icon">
-                      {this.renderIcon(data.current.weather[0].icon)}
+                      {renderIcon(data.current.weather[0].icon)}
                     </div>
                   </div>
                 </React.Fragment>
