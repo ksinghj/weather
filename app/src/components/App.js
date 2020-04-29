@@ -4,16 +4,16 @@ import { getWeather } from "../actions";
 import Input from "./Input";
 import Current from "./Current";
 import Row from "./Row";
-
 import "../styles/app.css";
 
 class App extends React.Component {
   renderRows = () => {
-    if (this.props.data) {
+    const { data } = this.props;
+    if (data) {
       return (
         <React.Fragment>
-          <Row rowName="hourly" hourly={this.props.data.hourly} />
-          <Row rowName="daily" daily={this.props.data.daily} />
+          <Row rowName="hourly" hourly={data.hourly} />
+          <Row rowName="daily" daily={data.daily} />
         </React.Fragment>
       );
     }
