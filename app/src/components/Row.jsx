@@ -39,9 +39,7 @@ class Row extends React.Component {
 
   render() {
     return (
-      <div className="row__container">
-        <div>{this.renderRowType(this.props.rowName)}</div>
-      </div>
+      <React.Fragment>{this.renderRowType(this.props.rowName)}</React.Fragment>
     );
   }
 }

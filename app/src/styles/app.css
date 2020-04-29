@@ -1,6 +1,6 @@
-/* .container__app {
-    
-} */
+.container__app {
+  max-width: 100vw;
+}
 .container__main-bg {
   background: #64b6ff;
 }
