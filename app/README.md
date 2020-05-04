@@ -6,4 +6,4 @@ I plan to remake this in React Native.
 
 Basic app, this is one of my practice projects.
 
-I will post a screenshot here when finished.
+![](./githubscreenshot.png "App screenshot")
