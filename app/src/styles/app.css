@@ -1,6 +1,8 @@
 .container__app {
   max-width: 100vw;
   overflow-x: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    #36f3ff;
 }
 #root {
   overflow-x: hidden;

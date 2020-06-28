@@ -4,8 +4,8 @@
   grid-template-columns: 5fr 4fr;
   grid-template-rows: 1fr 1fr;
   margin: 0 auto;
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    #36f3ff;
+  /* background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    #36f3ff; */
 }
 @media screen and (min-width: 1100px) {
   .current__container {

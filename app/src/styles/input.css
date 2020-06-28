@@ -8,8 +8,12 @@
   margin-top: 1em;
 }
 .container__input {
+  background: transparent;
   padding: 1em 2em;
   z-index: 10;
+}
+.container__input input {
+  background: transparent;
 }
 @media screen and (min-width: 680px) {
   .container__input {

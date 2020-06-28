@@ -4,7 +4,7 @@ import { getWeather } from "../actions";
 import Input from "./Input";
 import Current from "./Current";
 import Row from "./Row";
-// import "../styles/app.css";
+import "../styles/app.css";
 
 class App extends React.Component {
   renderRows = () => {
