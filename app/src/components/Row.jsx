@@ -5,19 +5,18 @@ import "../styles/row.css";
 class Row extends React.Component {
   renderCards = type => {
     if (type === "hourly") {
-      return this.props.hourly.slice(0, 24).map(cardData => {
-        return <Card hourly={cardData} />;
+      return this.props.hourly.slice(0, 24).map((cardData, index) => {
+        return <Card hourly={cardData} key={index} />;
       });
     }
-    return this.props.daily.map(cardData => {
-      return <Card daily={cardData} />;
+    return this.props.daily.map((cardData, index) => {
+      return <Card daily={cardData} key={index} />;
     });
   };
 
   renderRowType = name => {
     if (this.props) {
       if (name === "hourly") {
-        console.log(this.props.hourly);
         return (
           <React.Fragment>
             <div className="row__info">
