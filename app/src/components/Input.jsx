@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../actions";
 import { WEATHER_API_KEY } from "../api/owmKEY";
-import '../styles/input.css';
+import "../styles/input.css";
 
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -38,12 +38,13 @@ class LocationSearchInput extends React.Component {
       <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
-        onSelect={this.handleSelect}>
+        onSelect={this.handleSelect}
+      >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div className="container__input">
             <input
               {...getInputProps({
-                placeholder: "Search Places ...",
+                placeholder: "Where to?",
                 className: "location-search-input",
               })}
             />
@@ -55,14 +56,23 @@ class LocationSearchInput extends React.Component {
                   : "suggestion-item";
                 // inline style for demonstration purpose
                 const style = suggestion.active
-                  ? { backgroundColor: "#89c8ff", cursor: "pointer", padding: '1em' }
-                  : { backgroundColor: "#64b6f", cursor: "pointer", padding: '1em' };
+                  ? {
+                      backgroundColor: "#89c8ff",
+                      cursor: "pointer",
+                      padding: "1em",
+                    }
+                  : {
+                      backgroundColor: "#64b6f",
+                      cursor: "pointer",
+                      padding: "1em",
+                    };
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
                       className,
                       style,
-                    })}>
+                    })}
+                  >
                     <span>{suggestion.description}</span>
                   </div>
                 );

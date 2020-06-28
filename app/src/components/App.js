@@ -17,7 +17,7 @@ class App extends React.Component {
         </React.Fragment>
       );
     }
-    return <div>Getting data</div>;
+    return null;
   };
 
   render() {

@@ -97,7 +97,7 @@ class Current extends React.Component {
         </div>
       );
     }
-    return <div>Enter location in search</div>;
+    return null;
   }
 }
 
