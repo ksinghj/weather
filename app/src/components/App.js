@@ -27,7 +27,7 @@ class App extends React.Component {
           <Input />
           <Current />
         </div>
-        {this.renderRows()}
+        <div className="container__row">{this.renderRows()}</div>
       </React.Fragment>
     );
   }

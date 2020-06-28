@@ -18,22 +18,22 @@ class Current extends React.Component {
     let sunset = now.to(sunsetTime);
     return (
       <div className="suntimes__grid global-font__medium">
-        <div className="suntimes__sunrise suntimes__padding-align">
+        <div className="suntimes__sunrise suntimes__padding-align suntimes-flex">
           <img
             className="suntimes__img"
             style={{ maxWidth: "50px", maxHeight: "auto" }}
             src={sunriseIcon}
             alt="sunrise"
           />{" "}
-          {sunrise}
+          <p>{sunrise}</p>
         </div>
-        <div className="suntimes__sunset suntimes__padding-align">
+        <div className="suntimes__sunset suntimes__padding-align suntimes-flex">
           <img
             style={{ maxWidth: "50px", maxHeight: "auto" }}
             src={sunsetIcon}
             alt="sunset"
           />{" "}
-          {sunset}
+          <p>{sunset}</p>
         </div>
       </div>
     );
