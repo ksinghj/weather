@@ -53,8 +53,7 @@ class Current extends React.Component {
           </div>
         </div>
       );
-    } // TODO: Change current__main-icon to my own icons
-    // {this.renderIcon(data.current.weather[0].icon)}
+    }
   };
 
   render() {

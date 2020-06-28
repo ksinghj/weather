@@ -24,10 +24,8 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <div className="container__app">
-          <div className="container__main-bg">
-            <Input />
-            <Current />
-          </div>
+          <Input />
+          <Current />
         </div>
         {this.renderRows()}
       </React.Fragment>
