@@ -1,43 +1,50 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getWeather } from "../actions";
-import Input from "./Input";
-import Current from "./Current";
-import Row from "./Row";
-import "../styles/app.css";
+import React from 'react'
+import { connect } from 'react-redux'
 
-class App extends React.Component {
-  renderRows = () => {
-    const { data } = this.props;
+import Input from './Input'
+import Current from './Current'
+import Row from './Row'
+import '../styles/app.css'
+
+import useScript from '../hooks/useScript'
+
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
+
+const App = ({ data }) => {
+  const gscript = useScript(`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`)
+
+  const renderRows = () => {
     if (data) {
       return (
         <React.Fragment>
           <Row rowName="hourly" hourly={data.hourly} />
           <Row rowName="daily" daily={data.daily} />
         </React.Fragment>
-      );
+      )
     }
-    return null;
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <div className="container__app">
-          <Input />
-          <Current />
-        </div>
-        <div className="container__row">{this.renderRows()}</div>
-      </React.Fragment>
-    );
+    return null
   }
+
+  return (
+    <div className="container">
+      {gscript === 'ready' && (
+        <>
+          <div className="container__app">
+            <Input />
+            <Current />
+          </div>
+          <div className="container__row">{renderRows(data)}</div>
+        </>
+      )}
+    </div>
+  )
 }
 
 const mapState = state => {
-  return { data: state.weatherReducer.data };
-};
+  return { data: state.weatherReducer.data }
+}
 
-export default connect(mapState, { getWeather })(App);
+export default connect(mapState, {})(App)
 
 // TODO: Use location
 // TODO: Switch betweenn Celcius and Farenheight and Kelvin

@@ -1,7 +1,3 @@
-.container__row {
-  background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    #36f3ff;
-}
 .row {
   display: grid;
   grid-template-columns: 2fr 10fr;
