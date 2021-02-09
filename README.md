@@ -4,5 +4,10 @@ I plan to remake this in React Native.
 
 ## Weather web app made with React and Redux
 
-![](./weather-mobile.png "App screenshot")
+Desktop:
+
 ![](./weather-tablet.png "App tablet screenshot")
+
+Mobile:
+
+![](./weather-mobile.png "App screenshot")
